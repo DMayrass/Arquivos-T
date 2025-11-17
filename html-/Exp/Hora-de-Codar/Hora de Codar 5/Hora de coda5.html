@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+<body>
+	<script>
+		var Senha_segura = 3589
+		var Saldo_da_conta = 350.65;
+		var Historico = ["EXTRATO\n", "Entrada: R$ 10,00","Saída:   R$ 5,00","Entrada: R$ 3,00","Saída:   R$ 8,00","Entrada: R$ 20,00"];
+		var Nome = prompt("Olá, Seja bem vindo! \nQual seu nome?");
+		alert("É um prazer te conhecer "+Nome);
+		Inicio();
+		
+		function Inicio(){
+		var Interação = parseInt(prompt('Selecione uma opção: \n1.) Saldo \n2.) Extrato \n3.) Saque \n4.) Depósito \n5.) Transferencia \n6.) Sair'));
+
+			switch(Interação){
+    	case 1: ValidarSenha(Saldo); break;       
+    	case 2: ValidarSenha(Extrato); break;       
+    	case 3: ValidarSenha(Saque); break;         
+    	case 4: Deposito(); break;                  
+    	case 5: ValidarSenha(Transferencia); break; 
+    	case 6: alert("Tchau pobre! :)"); break;
+    	default: Erro(); break;
+		}
+			}
+
+
+		function Saldo(){
+			alert("Seu saldo é de R$:"+Saldo_da_conta.toFixed(2));
+			Inicio();
+		}
+
+		function Deposito(){
+			var Depositar = parseFloat(prompt("Que banco você roubou hoje?...Quer dizer...Quanto gostaria de Depositar?"));
+			switch(true){
+			case Depositar >=0: alert("Erro! Digita direito"); Saque(); break;
+			case Depositar <0: Saldo_da_conta+= Depositar; Historico.splice(1,0,"Entrada: R$ "+Depositar.toFixed(2)); Saldo(); break;
+		}}
+
+		function Saque(){
+			var Sacar = parseFloat(prompt("Lá vem mais divida...Quer dizer...Quanto gostaria de sacar?"));
+
+			switch(true){
+				case Sacar <= 0: alert("Erro! Digita direito"); Saque(); break;
+				case Sacar>Saldo_da_conta: alert("Você não tem todo esse dinheiro pobre, vai trabalhar \nSaldo Atual R$"+Saldo_da_conta);Saque(); break;
+				case Sacar<Saldo_da_conta: Saldo_da_conta-=Sacar; Historico.splice(1,0, "Saida: R$ "+Sacar.toFixed(2)); Saldo(); break;
+
+			}
+		}
+
+	function Extrato(){
+    	alert(Historico.join("\n"));
+    	Inicio();
+	}
+
+	function Transferencia(){
+    var Conta = prompt("Qual o numero da conta do Agiota...Quer dizer, Qual o numero da conta que você quer transferir?");
+    
+    if (!/^\d+$/.test(Conta)){ 
+        alert("Só números POR FAVOR!!!");
+        Transferencia();
+        return; 
+    }
+    
+    var Transferindo = parseFloat(prompt("Quanto você está devendo pro agiota...Quer dizer, quanto você quer transferir?"));
+    
+    if (Transferindo > Saldo_da_conta){
+        alert("Você não tem tudo isso, seu saldo atual é R$ " + Saldo_da_conta.toFixed(2));
+        Transferencia();
+        return; 
+    }
+    else if (Transferindo <= 0){
+        alert("Digita direito por favor");
+        Transferencia();
+        return;
+    }
+    else {
+        Saldo_da_conta -= Transferindo;
+        Historico.splice(1,0,"Transferência: R$ " + Transferindo.toFixed(2) + " para conta " + Conta);
+        alert("Agiota pago! Quer dizer transferência realizada!\nSaldo atual: R$ " + Saldo_da_conta.toFixed(2));
+        Inicio();
+    }
+}
+
+	function Erro() {
+		alert('Por favor, informe um número entre 1 e 6 paras navergar');
+		Inicio();
+	}
+	
+
+
+	function ValidarSenha(Key) {
+    var Senha = prompt("Digite sua senha:"); 
+    if (Senha === "3589") {                  
+        Key();                             
+    } 
+	
+	else {
+        alert("Senha incorreta! Tente novamente");           
+        ValidarSenha(Key);                            
+	}
+}
+
+	</script>
+</body>
+</html>

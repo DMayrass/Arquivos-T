@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+    var n = parseInt(prompt("Digite até qual número você quer a tabuada:"));
+
+    //Tabuana do Y
+    for (var Tabuada = 1; Tabuada <= n; Tabuada++) {
+        document.write("<h3>Tabuada do " + Tabuada + "</h3>");
+        
+        //Descrição
+        for (var Numeros_da_Tabuada = 1;      Numeros_da_Tabuada <= 10;       Numeros_da_Tabuada++) {
+            document.write(Tabuada+" x "+Numeros_da_Tabuada+" = "+ (Tabuada*Numeros_da_Tabuada)+"<br>");
+        }
+        
+        document.write("<hr>"); 
+    }
+
+</script>
+
+</head>
+<body>
+</body>
+</html>

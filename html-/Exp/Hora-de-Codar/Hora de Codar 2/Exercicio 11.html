@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <Script>
+
+    alert("Bem vindo a Calculadora")
+    
+    var Escolha = parseInt(prompt("O que você quer calcular:\n1: Soma. \n2: Subtração \n3: Divisão \n4: Mutiplicação "));
+    var Numero_1 = parseInt(prompt("Digite um Numero"));
+    var Numero_2 = parseFloat(prompt("Agora outro"));
+    var Resultado
+
+    if (Escolha === 1) {
+        Resultado = Numero_1 + Numero_2
+    }
+
+    else if (Escolha === 2) {
+        Resultado = Numero_1 - Numero_2
+    }
+
+    else if (Escolha === 3) {
+        Resultado = Numero_1 / Numero_2
+    }
+
+    else if (Escolha === 4) {
+        Resultado = Numero_1 * Numero_2
+    }
+
+    else {
+        alert("Erro tente novamente.")
+    }
+    alert("O resultado do seu calculo é: "+ Resultado)
+
+    </Script>
+</body>
+</html>
+ 
+Nota: Escolha uma das opções de calculo selecionando o número dela

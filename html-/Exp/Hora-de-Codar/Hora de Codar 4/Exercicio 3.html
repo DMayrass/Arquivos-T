@@ -1,0 +1,65 @@
+<!--Vamos criar uma lista de compras. 
+Crie uma array de frutas, exiba-a ao usuário e, em seguida, peça ao usuário para digitar o 
+nome de uma das frutas. 
+
+Caso a fruta esteja no array, remova-a e exiba a mensagem "Fruta foi retirada da lista".
+
+Peça novamente para o usuário digitar o nome de uma fruta para ser removida. 
+
+Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem
+ "Fruta indisponível no nosso mercado". 
+
+Quando o array não possuir mais itens dentro de si, escreva "Lista de compras finalizada".
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Compras</title>
+</head>
+<body>
+
+  <button onclick="editar()">Editar</button>
+  <div id="resultado"></div>
+
+  <script>
+//Primeira Parte
+    var Compras_Frutas = ["Abacate", "Abacaxi", "Acerola", "Amora", "Banana", "Laranja", "Limão", "Maçã", "Mamão", "Manga", "Maracujá", "Melancia","Melão", "Morango", "Uva"];
+    mostrarLista();
+
+    function editar() {
+      var Interacao = prompt("Digite o nome da fruta que foi reabastecida:").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+      var Retirar = Compras_Frutas.findIndex(Achar => Achar.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() === Interacao);
+
+
+//Segunda e Terceira Parte
+      if (Retirar !== -1) {
+        var Fruta_Selecionada = Compras_Frutas[Retirar];
+        Compras_Frutas.splice(Retirar, 1); // remove da lista
+        alert(Fruta_Selecionada + " foi reabastecida!");
+      } 
+
+      else {alert("Já foi abastecida");}
+
+      mostrarLista();
+    }
+
+//Final
+    function mostrarLista() {
+      var resultado = document.getElementById("resultado");
+      if (Compras_Frutas.length > 0) {
+        resultado.innerHTML = "<h2>Frutas para reposição:</h2>" + Compras_Frutas.join("<br>");
+      } 
+      
+      else {resultado.innerHTML = "<h2>Estoque Abastecido</h2>";}
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+<!--resultado.innerHTML = escreve apenas dentro daquele elemento específico (sem apagar nada mais)-->

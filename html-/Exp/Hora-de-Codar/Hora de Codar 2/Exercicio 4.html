@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <Script>
+
+        var Valor_1
+        var Valor_2
+        var Valor_3
+        var Maior_Numero1
+        var Maior_Numero2
+
+        alert("Vamos soma seus dois maiores números");
+        Valor_1 = parseInt(prompt("Digite o primeiro valor: "));
+        Valor_2 = parseInt(prompt("Digite o segundo valor:"));
+        Valor_3 = parseInt(prompt("Digite o terceiro valor:"));
+        
+        //Valor 1 como maior
+        if ( Valor_1>Valor_2 && Valor_1>Valor_3) {
+            Maior_Numero1 = Valor_1
+
+            if (Valor_2>Valor_3){
+                Maior_Numero2 = Valor_2;
+            }
+
+            else {
+                Maior_Numero2 =Valor_3;
+            }
+        }
+
+
+        //Numero dois como maior
+        if (Valor_2>Valor_1 && Valor_2>Valor_3) {
+            Maior_Numero1 = Valor_2
+
+            if (Valor_1>Valor_3){
+                Maior_Numero2=Valor_1;
+            }
+
+            else {
+                Maior_Numero2 = Valor_3;
+            }
+        }
+
+        //Numero trez como maior
+        if (Valor_3>Valor_1 && Valor_3>Valor_2){ 
+            Maior_Numero1 = Valor_3
+
+            if (Valor_1>Valor_2){
+                Maior_Numero2=Valor_1
+            }
+
+            else {
+                Maior_Numero2=Valor_2
+            }
+        }
+
+        alert("Seus dois maiores numeros são: "+ Maior_Numero1 +" e "+ Maior_Numero2)
+        alert("A soma deles dois é: "+ (Maior_Numero1 + Maior_Numero2))
+
+    </Script>
+
+
+
+</body>
+</html>

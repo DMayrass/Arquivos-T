@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css"> <!--Chamando css-->
+  <title>Hotel Javanilson Beruty</title>
+</head>
+
+<body id="A1">
+<!--Texto de Entrada---------------------------------------------------------------->
+<header class="Titulo">
+  <h1>Bem-vindo ao <span id="NomeDoHotel"></span></h1>
+</header>
+
+<!----Area de Login----------------------------------------------------------------->
+<!--Bloco 1-->
+<div class="FundoDaAreaDeLogin">
+
+    <!--Bloco 2 / Login -->
+    <label class="AreaDeLogin" for="User">Insira seu login</label>
+    <input type="text" id="User" class="InputDeLogin" placeholder="Digite seu login">
+
+    <label class="AreaDeLogin" for="SenhaUser">Insira a senha </label>
+    <input type="text"  id="SenhaUser" class="InputDeLogin" placeholder="Digite sua senha">
+
+    <button id="BotãoDeEnviar" class="BotãoEnviar" onclick="Verificação_de_Senha()"> Entrar </button>
+</div>
+
+<!----Funcionamento----------------------------------------------------------------->
+<script>
+    //Nome do Hotel 
+    const Nome_Do_Hotel = "Hotel Javison";
+    document.getElementById("NomeDoHotel").textContent = Nome_Do_Hotel; //textContent = Altera só o texto
+    localStorage.setItem("NomeDoHotel", Nome_Do_Hotel);
+
+    //Senha de Login
+    const SenhaDeLogin = 2678;
+
+    //Validando Senha
+    function Verificação_de_Senha() {
+      const SenhaDigitada = document.getElementById("SenhaUser").value;
+
+      //Nome do Usuario
+      const Usuario = document.getElementById("User").value;
+      localStorage.setItem("Usuario", Usuario);
+
+      if (parseInt(SenhaDigitada) !== SenhaDeLogin){
+        alert("Senha errada, tente novamente!")
+        window.location.href = "Area de Login.html";
+      }
+
+      else{ window.location.href = "Entrada.html";}
+    }
+</script>
+
+</body>
+</html>

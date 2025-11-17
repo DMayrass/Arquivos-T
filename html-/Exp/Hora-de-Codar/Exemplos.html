@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!--
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Compras</title>
+  \\ Biblioteca SweetAlert2
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Lista inicial de frutas
+    var frutas = ["Maçã", "Banana", "Laranja", "Uva", "Pera", "Manga"];
+
+    // Função para normalizar (remover acentos e deixar minúsculo)
+    function normalizar(texto) {
+      return texto.toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "")
+                  .trim();
+    }
+
+    // Função principal
+    async function listaDeCompras() {
+      while (frutas.length > 0) {
+        // Mostra a lista atual
+        let listaFormatada = frutas.join(", ");
+
+        const { value: frutaUser } = await Swal.fire({
+          title: '<strong>Lista de Compras</strong>',
+          html: "<b>Frutas disponíveis:</b><br>" + listaFormatada,
+          input: 'text',
+          inputPlaceholder: 'Digite o nome da fruta para remover',
+          showCancelButton: true,
+          confirmButtonText: 'Remover',
+          cancelButtonText: 'Sair'
+        });
+
+        // Se o usuário cancelar ou não digitar nada
+        if (!frutaUser) {
+          Swal.fire("🚪 Programa encerrado!");
+          return;
+        }
+
+        // Normaliza o texto do usuário
+        let frutaNormalizada = normalizar(frutaUser);
+
+        // Procura fruta na lista
+        let indice = frutas.findIndex(f => normalizar(f) === frutaNormalizada);
+
+        if (indice !== -1) {
+          let frutaRemovida = frutas.splice(indice, 1); // remove fruta
+          Swal.fire("✅ " + frutaRemovida + " foi retirada da lista!");
+        } else {
+          Swal.fire("❌ Fruta indisponível no nosso mercado!");
+        }
+      }
+
+      // Se acabar a lista
+      Swal.fire("🎉 Lista de compras finalizada!");
+    }
+
+    // Inicia o programa
+    listaDeCompras();
+  </script>
+</body>
+</html>
+-->
+
+
+
+<!-- -----------------------------------------------------------------------
+
+<head>
+  <meta charset="UTF-8">
+  <title>Diferença entre document.write e innerHTML</title>
+</head>
+<body>
+
+  <h2>Exemplo com <code>document.write()</code></h2>
+  <button onclick="usarWrite()">Usar document.write()</button>
+
+  <h2>Exemplo com <code>innerHTML</code></h2>
+  <div id="caixa">Aqui é a div com id="caixa"</div>
+  <button onclick="usarInnerHTML()">Usar innerHTML</button>
+
+  <script>
+    function usarWrite() {
+      // Isso vai apagar TODO o documento e escrever só isso
+      document.write("<h1>⚠️ document.write apagou tudo e escreveu só isso</h1>");
+    }
+
+    function usarInnerHTML() {
+      // Isso altera só o conteúdo da div "caixa"
+      document.getElementById("caixa").innerHTML = "<b>Agora esse texto veio do innerHTML!</b>";
+    }
+  </script>
+
+</body>
+</html>
+
+-->
+
+<!-- -----------------------------------------------------------------------
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo onclick</title>
+</head>
+<body>
+
+  <button onclick="editar()">Editar</button>
+
+  <p id="Etiqueta_1">Texto original</p>
+
+  <script>
+    function editar() {
+      // Essa função é chamada quando o botão é clicado
+      document.getElementById("Etiqueta_1").innerHTML = "Texto alterado!";
+    }
+  </script>
+
+</body>
+</html>
+-->
+
+<!-- -------------------------------------------------------------------------
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imput</title>
+</head>
+<body style="background-color: rgb(144,205,230);">
+<h1 style="text-align: center;"> Bem-vindo</h1>
+
+</!--O Impuxo cria um quadradinha para o usuario interagir dentro da pagina--/>
+<h3> Insia seu nome</h3>
+<input type="text" placeholder="Seu Nome">
+<br><br><br>
+
+</!--O Label ajuda a indica onde escreve quando clica no texto dele, e sobre oque e esse preenchimento para cego--/>
+<label for="usuario"> Insira seu nome </label>
+<input type="text" id="usuario" placeholder="Seu nome">
+<br><br><br>
+
+</html>!--Para armazenar o alor digitado--/>
+<label for="usuario1">Insira seu nome</label>
+<input type="text" id="usuario1" placeholder="Seu Nome">
+<button id="botao">Enviar</button>
+<script>
+
+//Seleciona o botão.             Executa o código quando clicar no botão.
+document.getElementById("botao").addEventListener("click", function() {  
+    const nomeUsuario = document.getElementById("usuario1").value;           //pega o que o usuário digitou no input.  //const variavel imutavel e value serve pra pegar so que o esta dentro do input e não ele todo
+    alert("Nome: " + nomeUsuario);                                          //mostra uma janela pop-up com os dados digitados.
+});
+</script>
+  
+
+
+
+
+
+
+
+
+
+
+O método localStorage.setItem() precisa de duas coisas:
+
+chave (nome que você vai usar para recuperar depois)
+
+valor (o que você quer salvar)
+localStorage.setItem("NomeDoHotel", Nome_Do_Hotel);
+localStorage.setItem("Usuario", Usuario);
+
+
+
+<div style="display:none;"
+    function IrParaA1() {
+        document.getElementById("A1").style.display = "block"; // mostra A1
+    }
+
+</body>
+</html>
+ -->
+
+<head>-------------------0
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imput</title>
+</head>
+ <body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo textContent</title>
+</head>
+<body>
+
+  
+
+</body>
+</html>
+
+
+<head>
+<meta charset="UTF-8">
+<title>Diferença textContent x innerHTML</title>
+</head>
+<body>
+
+<h2 id="exemplo1">Texto normal <b>em negrito</b></h2>
+
+<button onclick="usarTextContent()">Usar textContent</button>
+<button onclick="usarInnerHTML()">Usar innerHTML</button>
+
+<script>
+function usarTextContent() {
+    // Vai substituir **somente o texto**, ignorando tags HTML
+    document.getElementById("exemplo1").textContent = "Isso é textContent <i>Itálico</i>";
+}
+
+function usarInnerHTML() {
+    // Vai interpretar o HTML dentro da string
+    document.getElementById("exemplo1").innerHTML = "Isso é innerHTML <i>Itálico</i>";
+}
+</script>
+
+</body>
+</html>
+
+ </body>
+ </html>

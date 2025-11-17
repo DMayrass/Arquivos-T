@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+    <script>
+
+        var Valor_1
+        var Valor_2
+        var Valor_3
+        var Valor_4
+        var Maior_de_Todos = 0
+
+        alert("Vamos analizar esse números que você tem: ");
+        Valor_1 = parseInt(prompt("Digite o primeiro valor: "));
+        Valor_2 = parseInt(prompt("Digite o segundo valor:"));
+        Valor_3 = parseInt(prompt("Digite o terceiro valor:"));
+        Valor_4 = parseInt(prompt("Digite o quarto valor: "));
+
+        if (Valor_1 > Maior_de_Todos) {
+            Maior_de_Todos = Valor_1
+        }
+
+        if (Valor_2 > Maior_de_Todos) {
+            Maior_de_Todos = Valor_2
+        }
+
+        if (Valor_3 > Maior_de_Todos) {
+            Maior_de_Todos = Valor_3
+        }
+
+        if (Valor_4 > Maior_de_Todos) {
+            Maior_de_Todos = Valor_4
+        }
+
+        alert("Seu primerio números digitado foi: " + Valor_1 + "\n\n Seu Ultimo número digitado foi: "+ Valor_4 + "\n\n Seu maior numero digitado é: "+ Maior_de_Todos)
+    </script>
+</body>
+
+</html>

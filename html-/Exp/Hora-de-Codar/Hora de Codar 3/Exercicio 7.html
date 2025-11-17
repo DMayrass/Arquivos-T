@@ -1,0 +1,100 @@
+<!--Escreva um algoritmo para ler as notas de avaliações de um aluno, calcule e imprima a 
+média (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) 
+para cada nota. São 6 notas ao total.
+Caso o valor informado para qualquer uma das notas esteja fora do limite estabelecido, deve 
+ser solicitado um novo valor ao usuário. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-7 Suas Notas</title>
+
+<script> 
+
+    var Media = 0;
+    var Inserir_Nota, Inserir_Nota2, Inserir_Nota3, Inserir_Nota4, Inserir_Nota5, Inserir_Nota6;
+
+    Calculo_de_Notas();
+    Inicio_Fim();
+
+    function Calculo_de_Notas() {
+        // Inserindo as notas
+        Nota1();
+        Nota2();
+        Nota3();
+        Nota4();
+        Nota5();
+        Nota6();
+
+        // Calcular a média
+        var soma = (Inserir_Nota + Inserir_Nota2 + Inserir_Nota3 + Inserir_Nota4 + Inserir_Nota5 + Inserir_Nota6);
+        Media = soma / 6;
+    }
+
+    function Nota1() {
+        Inserir_Nota = parseFloat(prompt("Qual foi a nota da primeira prova?"));
+        if (Inserir_Nota > 10 || Inserir_Nota < 0 || isNaN(Inserir_Nota)) {
+            alert("ERRO!!! Dê um valor entre 0 e 10");
+            Nota1();
+        }
+    }
+
+    function Nota2() {
+        Inserir_Nota2 = parseFloat(prompt("Qual foi a nota da segunda prova?"));
+        if (Inserir_Nota2 > 10 || Inserir_Nota2 < 0 || isNaN(Inserir_Nota2)) {
+            alert("ERRO!!! Dê um valor entre 0 e 10");
+            Nota2();
+        }
+    }
+
+    function Nota3() {
+        Inserir_Nota3 = parseFloat(prompt("Qual foi a nota da terceira prova?"));
+        if (Inserir_Nota3 > 10 || Inserir_Nota3 < 0 || isNaN(Inserir_Nota3)) {
+            alert("ERRO!!! Dê um valor entre 0 e 10");
+            Nota3();
+        }
+    }
+
+    function Nota4() {
+        Inserir_Nota4 = parseFloat(prompt("Qual foi a nota da quarta prova?"));
+        if (Inserir_Nota4 > 10 || Inserir_Nota4 < 0 || isNaN(Inserir_Nota4)) {
+            alert("ERRO!!! Dê um valor entre 0 e 10");
+            Nota4();
+        }
+    }
+
+    function Nota5() {
+        Inserir_Nota5 = parseFloat(prompt("Qual foi a nota da quinta prova?"));
+        if (Inserir_Nota5 > 10 || Inserir_Nota5 < 0 || isNaN(Inserir_Nota5)) {
+            alert("ERRO!!! Dê um valor entre 0 e 10");
+            Nota5();
+        }
+    }
+
+    function Nota6() {
+        Inserir_Nota6 = parseFloat(prompt("Qual foi a nota da sexta prova?"));
+        if (Inserir_Nota6 > 10 || Inserir_Nota6 < 0 || isNaN(Inserir_Nota6)) {
+            alert("ERRO!!! Dê um valor entre 0 e 10");
+            Nota6();
+        }
+    }
+
+    function Inicio_Fim() {
+        var Entrar_Sair = parseInt(prompt("1 - Finalizar\n2 - Refazer"));
+
+        if (Entrar_Sair === 1) {
+            document.write("<h2>A Média é: " + Media.toFixed(2) + "</h2>");
+        } else {
+            Calculo_de_Notas();
+            Inicio_Fim();
+        }
+    }
+</script>
+
+</script>
+</head>
+<body>
+</body>
+</html>

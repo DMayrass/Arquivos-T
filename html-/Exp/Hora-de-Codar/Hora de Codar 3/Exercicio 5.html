@@ -1,0 +1,43 @@
+<!--5 - Faça um algoritmo que calcule e escreva a média aritmética dos dois números inteiros 
+informados pelo usuário e todos os números inteiros entre eles. Considere que o primeiro 
+sempre será menor que o segundo.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-5 Media....</title>
+
+        <script>
+        
+        var Numero1 = parseInt(prompt("Digite um número"));
+        var Numero2 = parseInt(prompt("Digite mais um"));
+        var Lista = [];
+        var Media1 = (Numero1+Numero2)/2
+        document.write("<h3> Média do "+Numero1+" e "+Numero2+"<br></h3>"+Media1);
+        
+
+        for (Numero1; Numero1<=Numero2; Numero1++){
+            Lista.push(Numero1);
+        }
+
+        var Soma = Lista.reduce((total, n) => total + n, 0);     // (total = 0, n = 7)   =>   retorna 0 + 7 = 7 (novo total)     
+        var Media0 = Soma/Lista.length;
+        
+        document.write("<h3> Médias dos números entre eles:</h3>")
+        document.write("Média:"+Media0+"<br><br>");
+        document.write(Lista.join("<br>"));
+
+
+
+// Notas: length mostra quantos itens tem na lista
+//        reduce percorre todos os item da lista
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+ 

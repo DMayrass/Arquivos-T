@@ -1,0 +1,29 @@
+<!--4 - Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros 
+entre 15 (inclusive) e 100 (inclusive).-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-4 Media de numeros inteiros</title>
+
+    <script>
+        var Lista = [];
+
+        for (var lista=15; lista<=100; lista++){
+            Lista.push(lista);
+        }
+
+        var Soma = Lista.reduce((total, n) => total + n, 0);    
+        var Media = Soma/Lista.length;
+
+        document.write("<h1> Números de 15 a 100 </h1>");
+        document.write("<h3>A media é: "+Media+"</h3>");
+        document.write(Lista.join("<br>"));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

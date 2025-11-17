@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css"> <!--Chamando css-->
+    <title>Inicio</title>
+    </script>
+</head>
+<body>
+
+<header class="Titulo">   
+        <h1>Bem-vindo ao <span id="NomeDoHotel"></span>, <span id="Usuario"></span> </h1> 
+</header>
+
+    <div class="Cabeçario">
+        <button id="B-Cadastro" class="B-Cabeçario" onclick="inicio(1)">Quartos disponiveis</button>
+        <button id="B-Pesquisar" class="B-Cabeçario" onclick="inicio(2)">Cadastros de Hóspedes</button>
+        <button id="B-Vagas" class="B-Cabeçario" onclick="inicio(3)"> Estacionamento</button>
+        <button id="B-Sair" class="B-Cabeçario" onclick="inicio(4)"> Serviço</button>
+    </div>
+
+<footer>
+   <button class="B-Sair" onclick="Sair()"> Sair </button>
+</footer>
+
+
+<script>
+    const NomeUsuario = localStorage.getItem("Usuario");                    //Criando outro variavel para guardar o valor da varialver que guardo o valor do ome digitado 
+    document.getElementById("Usuario").textContent = NomeUsuario;
+
+    const Nome_do_Hotel = localStorage.getItem("NomeDoHotel");                     
+    document.getElementById("NomeDoHotel").textContent = Nome_do_Hotel;
+  
+    function inicio(escolha) {
+        switch(escolha){
+            case 1: Reserva_Quartos(); break;
+            case 2: Cadastro_Hospedes(); break;
+            case 3: Estacionamento(); break;
+            case 4: Algumacoisa(); break;
+        }
+    }
+
+    function Reserva_Quartos(){ alert("Reserva de Quartos"); }
+    function Cadastro_Hospedes(){ alert("Cadastro de Hóspedes"); }
+    function Estacionamento(){ alert("Abastecimento de Carros"); }
+    function Algumacoisa(){ alert("Abastecimento de Carros"); }
+    function Sair(){ document.write("<h1>Saindo!</h1> <h2>Muito obrigado e até logo<h2>"); setTimeout(function() {window.location.href = "Area de Login.html";}, 3000);}    //??
+</script>
+    
+</body>
+</html>

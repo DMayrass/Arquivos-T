@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+
+<body>
+    <script>
+
+        alert("Vamos calcular sua notas? ");
+        
+        var Valor_1 = parseInt(prompt("Digite o primeiro valor:"));
+        var Valor_2 = parseInt(prompt("Digite o segundo valor:"));
+        var Valor_3 = parseInt(prompt("Digite o terceiro valor:"));
+        var Valor_4 = parseInt(prompt("Digite o quarto valor:"));
+        var Soma = 0;
+
+        if (Valor_1>=0 && Valor_1<=10) {
+            Soma = Soma+Valor_1;
+        }
+
+        if  (Valor_2<= 10 && Valor_2>=0) {
+            Soma = Soma+Valor_2;
+        }
+
+        if (Valor_3<= 10 && Valor_3>=0) {
+            Soma = Soma+Valor_3;
+        }
+
+        if (Valor_4<= 10 && Valor_4>=0) {
+            Soma = Soma+Valor_4;
+        }
+       
+
+
+
+        var Media_aritmetica = Soma / 4;
+
+        if (Media_aritmetica<5) { 
+            alert("Tente novamente");
+        } 
+
+        else {
+            alert("Você passou");
+        }
+
+        </Script>
+</body>
+
+</html>

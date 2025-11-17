@@ -1,0 +1,42 @@
+<!--Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive).
+Considere que o N será sempre maior que ZERO.
+N  é um valor informado pelo usuário
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-8 Numeros entre n e 0</title>
+
+    <script>
+
+        var n = parseFloat(prompt("Digite um Valor"));
+
+        if ( n<0 || isNaN(n)) {
+            alert("Valor invalido digite novamente")
+        }
+
+        else {
+            document.write("<h2> Valores entre 1 e "+n+"</h2>");
+            document.write("<strong>1</strong><br>")
+            for (Contator = 2; Contator<n; Contator++) {
+               //(inicialização; condição; atualização)
+                document.write(Contator + "<br>")
+            }
+            document.write("<strong>"+Contator+"<strong> <br>")
+            
+        }
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+</body>
+</html>

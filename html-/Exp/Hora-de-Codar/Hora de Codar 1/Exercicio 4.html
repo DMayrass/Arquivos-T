@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+
+    var Base;
+    var Lado;
+    var Altura;
+    var Area;
+    var Raio
+
+    var Diagonal_Maior
+    var Diagonal_Menor
+    var Base_Menor
+    var Base_Maior
+
+    Escolha = prompt("Bom dia! Você quer calcular a área do que? ")
+    
+    //Calculo do Quadrado
+    if (Escolha === "Quadrado" || Escolha === "quadrado") {
+
+        Lado= parseInt(prompt("Digite as dimensões do quadrado"));
+
+        Area = Lado*Lado;
+        alert("Area total é: "+Area);
+    }
+
+    //Calculo do Retangulo
+    else if (Escolha === "Retangulo" || Escolha === "retangulo"){
+
+        Base= parseInt(prompt("Digite a base"));
+        Altura = parseInt(prompt("Digite a altura"));
+
+        Area = Base * Altura;
+        alert("Area total é: "+Area);
+    }
+
+    //Calculo do Losangulo
+     else if (Escolha === "Losangulo" || Escolha === "losangulo"){
+
+        Diagonal_Maior= parseInt(prompt("Digite o valor da diagonal maior"));
+        Diagonal_Menor = parseInt(prompt("Digite o valor da diagonal menor"));
+
+        Area = (Diagonal_Maior *Diagonal_Menor) / 2;
+        alert("Area total é: "+Area);  
+    }
+
+    //Calculo do Trapezio
+     else if (Escolha === "Trapezio" || Escolha === "trapezio"){
+
+        Base_Maior= parseInt(prompt("Digite o valor da base maior"));
+        Base_Menor= parseInt(prompt("Digite o valor da base menor"));
+        Altura = parseInt(prompt("Digite a altura"));
+
+        Area = ((Base_Maior + Base_Menor) * Altura) / 2
+        alert("Area total é: "+Area)
+    }
+
+
+    //Calculo do Paralelograma
+     else if (Escolha === "Paralelograma" || Escolha === "paralelograma"){
+
+        Base= parseInt(prompt("Digite a base"));
+        Altura = parseInt(prompt("Digite a altura"));
+
+        Area = Base * Altura
+        alert("Area total é :"+Area)
+    }
+
+    //Calculo do Triangulo
+     else if (Escolha === "Triangulo" || Escolha === "triangulo"){
+
+        Base= parseInt(prompt("Digite a base"));
+        Altura = parseInt(prompt("Digite a altura"));
+
+        Area = (Base * Altura) / 2
+        alert("Area total é: "+Area)
+    }
+    
+    //Calculo do Circulo
+     else if (Escolha === "Circulo" || Escolha === "circulo"){
+
+        Raio = parseInt(prompt("Digite o raio do circulo"));
+
+        Area = 3.14 * (Raio * Raio)
+        alert("Area total é: "+Area)
+    }
+    </Script>
+
+
+
+</body>
+</html>

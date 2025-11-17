@@ -1,0 +1,45 @@
+<!--Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", 
+"Saturno"  e, em seguida, peça ao usuário para digitar o nome de um planeta.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-2 planetas</title>
+
+<script> 
+var Lista_de_Planetas = ["Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"];
+var User_Planeta = prompt("Digite o planeta que você quer achar").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); //Aqui eu formatei o que o usuario digita
+var Encontrar = Lista_de_Planetas.find(Achar => Achar.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === User_Planeta);  // Aqui eu formatei os itens da lista
+
+if (Encontrar) {
+        document.write("Planeta "+Encontrar+" encontrado no Sistema Solar");
+    }
+
+    else{
+        document.write("Planeta não encontrado");
+    }
+
+
+
+
+    
+/* Nota 
+    
+Lista_de_Panetas.some(Achar => Achar === User_Planeta
+•	O primeiro Achar é o nome do parâmetro da função → cada item da lista vai ser colocado dentro dessa variável enquanto o .some() percorre.
+•	(podia se chamar planeta, item, x… você escolhe o nome).
+•	O segundo Achar é o uso desse parâmetro dentro da comparação → aqui a gente compara o item atual (Achar) com o que o usuário digitou (User_Planeta).
+
+.some() → retorna true/false, só diz se existe algum item que atende a condição.
+.find() → retorna o próprio item que atende a condição (ou undefined).
+
+*/
+
+</script>
+
+</head>
+<body>
+</body>
+</html>

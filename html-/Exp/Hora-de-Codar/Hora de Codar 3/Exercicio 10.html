@@ -1,0 +1,50 @@
+<!--Escreva um programa em que o usuário informe 10 valores e escreva quantos desses valores
+ lidos estão entre os números 24 e 42 (incluindo os valores 24 e 42) e quantos deles estão
+  fora deste intervalo.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-10 Numeros entre 24 e 42</title>
+
+    <script>
+
+  var Dentro = [];
+  var Fora = [];
+
+  var Valor1 = parseInt(prompt("Digite os Valores: \n>>>Primeiro<<<"));
+  var Valor2 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\n>>>Segundo<<<"));
+  var Valor3 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\n>>>Terceiro<<<"));
+  var Valor4 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\n>>>Quarto<<<"));
+  var Valor5 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\nQuarto: "+Valor4+"\n>>>Quinto<<<"));
+  var Valor6 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\nQuarto: "+Valor4+"\nQuinto: "+Valor5+"\n>>>Sexto<<<"));
+  var Valor7 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\nQuarto: "+Valor4+"\nQuinto: "+Valor5+"\nSexto: "+Valor6+"\n>>>Sétimo<<<"));
+  var Valor8 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\nQuarto: "+Valor4+"\nQuinto: "+Valor5+"\nSexto: "+Valor6+"\nSétimo: "+Valor7+"\n>>>Oitavo<<<"));
+  var Valor9 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\nQuarto: "+Valor4+"\nQuinto: "+Valor5+"\nSexto: "+Valor6+"\nSétimo: "+Valor7+"\nOitavo: "+Valor8+"\n>>>Nono<<<"));
+  var Valor10 = parseInt(prompt("Digite os Valores \nPrimeiro: "+Valor1+"\nSegundo: "+Valor2+"\nTerceiro: "+Valor3+"\nQuarto: "+Valor4+"\nQuinto: "+Valor5+"\nSexto: "+Valor6+"\nSétimo: "+Valor7+"\nOitavo: "+Valor8+"\nNono: "+Valor9+"\n>>>Décimo<<<"));
+
+  // Testando cada valor
+  if (Valor1>=24 && Valor1<=42) { Dentro.push(Valor1); } else { Fora.push(Valor1); }
+  if (Valor2>=24 && Valor2<=42) { Dentro.push(Valor2); } else { Fora.push(Valor2); }
+  if (Valor3>=24 && Valor3<=42) { Dentro.push(Valor3); } else { Fora.push(Valor3); }
+  if (Valor4>=24 && Valor4<=42) { Dentro.push(Valor4); } else { Fora.push(Valor4); }
+  if (Valor5>=24 && Valor5<=42) { Dentro.push(Valor5); } else { Fora.push(Valor5); }
+  if (Valor6>=24 && Valor6<=42) { Dentro.push(Valor6); } else { Fora.push(Valor6); }
+  if (Valor7>=24 && Valor7<=42) { Dentro.push(Valor7); } else { Fora.push(Valor7); }
+  if (Valor8>=24 && Valor8<=42) { Dentro.push(Valor8); } else { Fora.push(Valor8); }
+  if (Valor9>=24 && Valor9<=42) { Dentro.push(Valor9); } else { Fora.push(Valor9); }
+  if (Valor10>=24 && Valor10<=42) { Dentro.push(Valor10); } else { Fora.push(Valor10); }
+
+  // Mostrando os resultados
+  document.write("<h3>Valores entre 24 e 42:</h3>" + Dentro.join(", ") + "<br>");
+  document.write("<h3>Valores fora do intervalo:</h3>" + Fora.join(", "));
+</script>
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

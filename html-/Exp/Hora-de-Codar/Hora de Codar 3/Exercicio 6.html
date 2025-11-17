@@ -1,0 +1,78 @@
+<!--
+Escreva um programa para ler 2 notas de um aluno, calcular e imprimir a média final. 
+Considere que a nota de aprovação é 9,5. Logo após escrever a mensagem 
+    "Calcular a média de outro aluno Sim/Não?" 
+e solicitar um resposta. Se a resposta for "S", o programa deve ser executado novamente, 
+caso contrário deve ser encerrado exibindo a quantidade de alunos aprovados.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-6 Nota de Aluno</title>
+
+    <script>
+    
+    //Crição de variavel
+    var Alunos_A = [];
+    var Alunos_R = [];
+
+
+    // Inicio
+    alert("Bem vindo");
+    Cadastro_de_Notas();
+
+
+    //Cadastro das Notas
+    function Cadastro_de_Notas() {
+    var Aluno = prompt("Nome do Aluno:_");
+    var Nota1 = parseFloat(prompt("Qual foi a nota da primeira prova?"));
+    var Nota2 = parseFloat(prompt("E qual foi a nota da segunda prova?"));
+    var Media = (Nota1 + Nota2)/2;
+
+     if (Media>9.5) { 
+        Alunos_A.push(Aluno + " - Media: "+ Media); 
+        }
+        else if (Media<9.5){
+        Alunos_R.push(Aluno + " - Media: "+ Media);
+        }
+
+    Entrada(Alunos_A,Alunos_R);
+    }
+
+
+    //Inicio e Saida
+    function Entrada(Alunos_A,Alunos_R) {
+        var Inicio = parseInt(prompt("1)Continuar   "+"2) Finalizar"));
+
+        //  Inicia o programa
+        if(Inicio===1){
+            Cadastro_de_Notas();
+        }
+
+        //fecha o prompt e escreve os dados inseridos no site
+        else {
+            alert("Programa Encerrado");
+                document.write("<h1>Turma 2B</h1>");
+                document.write("<h3>Aprovados</h3>");
+                document.write(Alunos_A.join("<br>"));
+                document.write("<h3>Reprovados</h3>");
+                document.write(Alunos_R.join("<br>"));
+    }
+    }
+
+    //Notas: push Adiciona item no filnal da lista  | join tranforma a lista em uma string e acresenta algo entre elas 
+    //var frutas = ["maçã", "banana", "laranja"];
+    //var resultado = frutas.join("/ ");
+    //console.log(frutas);
+    //document.write(frutas);
+    //console.log(resultado);
+    //document.write(resultado);
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

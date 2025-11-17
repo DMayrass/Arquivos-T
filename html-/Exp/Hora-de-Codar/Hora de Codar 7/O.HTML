@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(144,205,230);">
+
+  <!--Texto de Entrada-->
+  <header style="color: rgb(0, 0, 0); text-align:center; margin-bottom: 20px;">
+    <h1>Bem-vindo ao <span id="NomeDoHotel"></span></h1>
+  </header>
+
+  <!--Área de Login-->
+  <div class="FundoDaAreaDeLogin">
+      <!-- Login -->
+      <label class="AreaDeLogin" for="usuario">Insira seu login</label>
+      <input type="text" id="usuario" class="InputDeLogin" placeholder="Digite seu login">
+
+      <!-- Senha -->
+      <label class="AreaDeLogin" for="senha">Insira a senha</label>
+      <input type="password" id="senha" class="InputDeLogin" placeholder="Digite sua senha">
+
+      <!-- Botão de login -->
+      <button class="BotaoLogin">Entrar</button>
+  </div>
+
+  <style>
+    /* Labels e textos */
+    .AreaDeLogin {
+      color: aliceblue;
+      text-align: center;
+      display: block;
+      margin: 10px 0 5px 0; /* espaço entre o texto e o input */
+      font-weight: bold;
+    }
+
+    /* Inputs */
+    .InputDeLogin {
+      width: 90%;          /* ocupa quase todo o bloco */
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: blue;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;   /* centraliza o input */
+    }
+
+    /* Botão */
+    .BotaoLogin {
+      padding: 10px 20px;
+      background-color: rgb(0, 102, 204);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .BotaoLogin:hover {
+      background-color: rgb(0, 80, 160);
+    }
+
+    /* Bloco de fundo */
+    .FundoDaAreaDeLogin {
+      background-color: rgb(69, 133, 158); 
+      width: 300px;
+      padding: 20px;       /* espaço interno */
+      margin: auto;         /* centraliza horizontalmente */
+      border-radius: 10px;
+      text-align: center;   /* centraliza conteúdo horizontalmente */
+    }
+  </style>
+
+  <script>
+    const NomeDoHotel = "Javanilson de Beruty";
+    document.getElementById("NomeDoHotel").textContent = NomeDoHotel;
+  </script>
+</body>
+
+</html>
