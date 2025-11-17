@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>  
+html-to-pdf artigo.html artigo.pdf 
+
+<head> <!-- ÁREA DE CONFIGURAÇÕES -->
+       <title> Titulo/Nome da pagina </title>
+
+        <!-- Open Graph (Facebook, WhatsApp, etc) -->
+
+</head>
+
+
+<body> <!-- ÁREA DO CONTEÚDO -->
+        <h1> Titulo do Texto </h1>
+        <p> Paragrafo </p>
+
+        <h3>Inserindo um Link</h3>
+        <a href= "https://www.w3schools.com/html/html_examples.asp" target="_blank">  Link alguma coisa </a>
+        
+        <h3>Colando uma Imagem</h3>
+        <img src="Imagens/img.jpg"  alt="Alguma coisa" width="2000" e height="100"> 
+        
+        <!--  
+        1) Localiza
+        2) Texto alternativo que aparece se a imagem não carregar e descrever a imagem para pessoas com deficiência visual.
+        3) Tamanho
+        -->
+
+        <h3>Criando Botão</h3>
+        <button>Click me</button>
+        <button onclick="alert('Você clicou no botão!')"> Click com Ação</button>
+
+        <h3>Criando Lista</h3>
+        Lista N_ORDENADA
+        <ul> Bebidas
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+        </ul>  
+
+        Lista ORDENADA
+        <ol> Comidas
+                <li>Pão</li>
+                <li>Torta</li>
+                <li>Bolo</li>
+        </ol>
+
+        <a href="#">Home</a>
+        
+</body>
+</html>

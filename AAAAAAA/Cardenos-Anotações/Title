@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>  
+    
+<head> 
+<title>Atributos </Title>     <!--Assim é titulo de Pagina-->
+</head>
+
+<body> 
+
+<h1> Atributos "Title"</h1>
+<h3 title="um breve resumo">Exemplo</h3>
+<p title="A resposta é 4"> Quanto e 2+2?  </p> 
+<a title= "Link para Receita de Bolo de Banana" href=" https://www.tudogostoso.com.br/receita/119737-bolo-de-banana-rapido-de-liquidificador.html?gad_source=1&gad_campaignid=22873459339&gbraid=0AAAABA8CQ4b5tefddelfdq3wGJfRU6iKv&gclid=CjwKCAjwkvbEBhApEiwAKUz6-9GOHFnyVOCnHdYbLp6rPTADOPgtY_f-6oBqWPykOh91JRpYrQqv4RoC9BoQAvD_BwE"> Bolo de Banan</a>
+<p><img title="Imagem de um bolo" src="Imagens/Bolo de Banana.jpg" width="15%"></p>        
+<!--
+Serve para fornece informações adicionais sem poluir visualmente a página.
+Melhora a acessibilidade (leitores de tela podem ler o conteúdo do title)
+Mais Pratico usados em usados em titilos ou links e imagem               
+-->
+
+
+<h1> Atributo "href"</h1>
+<a href="https://www.exemplo.com.br" > Exemplo de link </a>
+<!-- 
+A tag "a" e resposavel por 
+Navegação entre páginas.
+Criar âncoras internas.
+Disparar ações como downloads ou e-mails.. 
+ 
+e o "href" especificad
+-->
+
+
+<h1> Atributos "width" e "height"</h1>
+<img src="Imagens/Tamanho.png" alt="Medida" width="200" height="150">
+<!--Os atributos width e height da tag img definem a largura e a altura da imagem: W-Largura - H-Altura -->
+
+<h1> Atributo Alt  </h1>
+<img src="https://cta.ifrs.edu.br/wp-content/uploads/sites/3/2018/12/18_BoasPrativasDescricaoImagens.jpg" alt="Imagem Exsplicativo sobre a tag alt" width="15%">
+<!-- O atributo alt deve refletir o conteúdo da imagem, para que os usuários que não conseguem vê-la entendam o que ela contém-->
+
+<h1> Atributo "hr </h1>
+<hr>
+<hr style="border: 1px dashed #ccc;">      <!-- Linha pontilhada-->
+<hr style="border: 1px solid rgb(95, 170, 151); margin: 20px 0;">   <!-- Linha Colorida-->
+<!-- Faz linhas/ divisorias para separar os textos 
+ Leitores de tela anunciam como uma pausa (evite usar excessivamente). 
+-->
+
+
+</body>
+</html>

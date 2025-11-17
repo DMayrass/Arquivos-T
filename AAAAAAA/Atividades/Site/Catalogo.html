@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Animes - LichtWelt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .Margem_do_site {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1a237e, #283593);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .Estilo_do_titulo {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            display: inline-block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        nav a.active {
+            background-color: #3949ab;
+        }
+        
+        h2 {
+            text-align: center;
+            margin: 30px 0;
+            color: #1a237e;
+            font-size: 2rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3949ab;
+        }
+        
+        .Sessão_de_catalogos {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .Espaçamento_dos_Balões {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            justify-content: right;
+        }
+        
+        .Formatação_do_balão {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .Formatação_do_balão:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .Imagem_anime {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .Espaçamento_Balão_dentro {
+            padding: 20px;
+        }
+        
+        .Titulo_da_recomendação {
+            color: #1a237e;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .Informações_do_Anime {
+            color: #555;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .Descrição_Anime {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .Emcaminhamento_Assistir {
+            display: block;
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .Emcaminhamento_Assistir:hover {
+            background-color: #283593;
+        }
+        
+        footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="Margem_do_site">
+            <h1 class="Estilo_do_titulo">LichtWelt</h1>
+            <nav>
+                <a href="LichtWelt.html"><i class="fas fa-home"></i> Início</a>
+                <a href="Noticias.html"><i class="fas fa-newspaper"></i> Notícias</a>
+                <a href="Catalogo.html" class="active"><i class="fas fa-book-open"></i> Catálogo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="Margem_do_site">
+        <h2>Catálogo de Animes Recomendados</h2>
+        
+        <div class="Sessão_de_catalogos">
+            <div class="Espaçamento_dos_Balões">
+                <!-- Spy x Family -->
+                <div class="Formatação_do_balão">
+                    <img src="Imagens2/Cap1.webp" alt="Spy x Family" class="Imagem_anime">
+                    <div class="Espaçamento_Balão_dentro">
+                        <h3 class="Titulo_da_recomendação">Spy x Family</h3>
+                        <div class="Informações_do_Anime">
+                            <span>26 episódios</span>
+                            <span>2022</span>
+                        </div>
+                        <p class="Descrição_Anime">Um espião cria uma família falsa para se infiltrar em uma escola, sem saber que sua filha adotiva é telepata e sua esposa é uma assassina.</p>
+                        <a href="https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family" class="Emcaminhamento_Assistir">Assistir</a>
+                    </div>
+                </div>
+                
+                <!-- One Piece -->
+                <div class="Formatação_do_balão">
+                    <img src="Imagens2/Cap2.png" alt="One Piece" class="Imagem_anime">
+                    <div class="Espaçamento_Balão_dentro">
+                        <h3 class="Titulo_da_recomendação">One Piece</h3>
+                        <div class="Informações_do_Anime">
+                            <span>1000+ episódios</span>
+                            <span>1999</span>
+                        </div>
+                        <p class="Descrição_Anime">Luffy e sua tripulação procuram o tesouro One Piece para se tornar o Rei dos Piratas.</p>
+                        <a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" class="Emcaminhamento_Assistir">Assistir</a>
+                    </div>
+                </div>
+                
+                <!-- Darling in the Franxx -->
+                <div class="Formatação_do_balão">
+                    <img src="Imagens2/Cap3.webp" alt="Darling in the Franxx" class="Imagem_anime">
+                    <div class="Espaçamento_Balão_dentro">
+                        <h3 class="Titulo_da_recomendação">Darling in the Franxx</h3>
+                        <div class="Informações_do_Anime">
+                            <span>24 episódios</span>
+                            <span>2018</span>
+                        </div>
+                        <p class="Descrição_Anime">Jovens pilotam mechas para proteger a humanidade em um futuro distópico.</p>
+                        <a href="https://www.crunchyroll.com/series/GY8VEQ95Y/darling-in-the-franxx" class="Emcaminhamento_Assistir">Assistir</a>
+                    </div>
+                </div>
+                
+                <!-- Blue Exorcist -->
+                <div class="Formatação_do_balão">
+                    <img src="Imagens2/Cap4.webp" alt="Blue Exorcist" class="Imagem_anime">
+                    <div class="Espaçamento_Balão_dentro">
+                        <h3 class="Titulo_da_recomendação">Blue Exorcist</h3>
+                        <div class="Informações_do_Anime">
+                            <span>37 episódios</span>
+                            <span>2011</span>
+                        </div>
+                        <p class="Descrição_Anime">Rin descobre que é filho de Satanás e decide se tornar um exorcista.</p>
+                        <a href="https://www.crunchyroll.com/series/G649PJ0JY/blue-exorcist" class="Emcaminhamento_Assistir">Assistir</a>
+                    </div>
+                </div>
+                
+                <!-- Erased -->
+                <div class="Formatação_do_balão">
+                    <img src="Imagens2/Cap5.jpg" alt="Erased" class="Imagem_anime">
+                    <div class="Espaçamento_Balão_dentro">
+                        <h3 class="Titulo_da_recomendação">Erased</h3>
+                        <div class="Informações_do_Anime">
+                            <span>12 episódios</span>
+                            <span>2016</span>
+                        </div>
+                        <p class="Descrição_Anime">Satoru volta no tempo para evitar o assassinato de sua colega de classe.</p>
+                        <a href="https://www.crunchyroll.com/series/GYGG92K7Y/erased" class="Emcaminhamento_Assistir">Assistir</a>
+                    </div>
+                </div>
+                
+                <div class="Formatação_do_balão">
+                    <img src="Imagens2/Cap6.jpeg" alt="Tensei Shitara Slime Datta Ken" class="Imagem_anime">
+                    <div class="Espaçamento_Balão_dentro">
+                        <h3 class="Titulo_da_recomendação">Tensei Shitara Slime Datta Ken</h3>
+                        <div class="Informações_do_Anime">
+                            <span>48 episódios</span>
+                            <span>2018</span>
+                        </div>
+                        <p class="Descrição_Anime">Um homem reencarna como um slime em um mundo de fantasia e constrói uma nação.</p>
+                        <a href="https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime" class="Emcaminhamento_Assistir">Assistir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="Margem_do_site"> 
+            <p>© 2025 - LichtWelt. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Flex - Explicação Interativa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            margin: 25px 0 15px;
+            color: #2575fc;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .explanation {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .demo {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .flex-container {
+            display: flex;
+            background-color: #eaeaea;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 200px;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        
+        .flex-item {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .property-demo {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+        
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .highlight {
+            background: #fffacd;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Display Flex - Guia Interativo</h1>
+        <p>Entenda na prática como funciona a propriedade CSS display: flex</p>
+    </header>
+    
+    <div class="container">
+        <div class="explanation">
+            <h2>O que é Display Flex?</h2>
+            <p>O <span class="highlight">display: flex</span> é um método de layout em CSS que facilita o design de estruturas responsivas e a organização de elementos dentro de um container.</p>
+            
+            <p>Quando aplicamos <span class="highlight">display: flex</span> a um elemento, ele se torna um <strong>flex container</strong>, e seus filhos diretos se tornam <strong>flex items</strong>.</p>
+            
+            <div class="code-example">
+                .container {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                }
+            </div>
+            
+            <h2>Vantagens do Flexbox</h2>
+            <ul>
+                <li>Layouts responsivos sem usar float ou positioning</li>
+                <li>Alinhamento e distribuição simples de espaço entre itens</li>
+                <li>Capacidade de redimensionar itens flexíveis para preencher o espaço disponível</li>
+                <li>Controle sobre a direção do layout (linha ou coluna)</li>
+            </ul>
+            
+            <h2>Propriedades Principais</h2>
+            <p><strong>flex-direction:</strong> Define a direção dos itens (row, column, row-reverse, column-reverse)</p>
+            <p><strong>justify-content:</strong> Alinha os itens ao longo do eixo principal (center, flex-start, flex-end, space-between, space-around)</p>
+            <p><strong>align-items:</strong> Alinha os itens ao longo do eixo transversal (stretch, center, flex-start, flex-end, baseline)</p>
+            <p><strong>flex-wrap:</strong> Controla se os itens devem quebrar para uma nova linha (nowrap, wrap, wrap-reverse)</p>
+        </div>
+        
+        <div class="demo">
+            <h2>Demonstração Interativa</h2>
+            <p>Use os controles abaixo para alterar as propriedades do flex container e veja o resultado em tempo real:</p>
+            
+            <div class="flex-container">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="flexDirection">flex-direction</label>
+                    <select id="flexDirection">
+                        <option value="row">row</option>
+                        <option value="row-reverse">row-reverse</option>
+                        <option value="column">column</option>
+                        <option value="column-reverse">column-reverse</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="justifyContent">justify-content</label>
+                    <select id="justifyContent">
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="space-between">space-between</option>
+                        <option value="space-around">space-around</option>
+                        <option value="space-evenly">space-evenly</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="alignItems">align-items</label>
+                    <select id="alignItems">
+                        <option value="stretch">stretch</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="baseline">baseline</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="flexWrap">flex-wrap</label>
+                    <select id="flexWrap">
+                        <option value="nowrap">nowrap</option>
+                        <option value="wrap">wrap</option>
+                        <option value="wrap-reverse">wrap-reverse</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="property-demo">
+                <h3>CSS Aplicado:</h3>
+                <div class="code-example" id="cssCode">
+                    .flex-container {<br>
+                    &nbsp;&nbsp;display: flex;<br>
+                    &nbsp;&nbsp;flex-direction: row;<br>
+                    &nbsp;&nbsp;justify-content: flex-start;<br>
+                    &nbsp;&nbsp;align-items: stretch;<br>
+                    &nbsp;&nbsp;flex-wrap: nowrap;<br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Display Flex - Exemplo Interativo | CSS Moderno para Layouts Flexíveis</p>
+    </footer>
+
+    <script>
+        // Obtendo elementos do DOM
+        const flexContainer = document.querySelector('.flex-container');
+        const flexDirection = document.getElementById('flexDirection');
+        const justifyContent = document.getElementById('justifyContent');
+        const alignItems = document.getElementById('alignItems');
+        const flexWrap = document.getElementById('flexWrap');
+        const cssCode = document.getElementById('cssCode');
+        
+        // Função para atualizar o CSS do container
+        function updateFlexContainer() {
+            flexContainer.style.flexDirection = flexDirection.value;
+            flexContainer.style.justifyContent = justifyContent.value;
+            flexContainer.style.alignItems = alignItems.value;
+            flexContainer.style.flexWrap = flexWrap.value;
+            
+            // Atualizar o código CSS exibido
+            cssCode.innerHTML = `.flex-container {<br>
+&nbsp;&nbsp;display: flex;<br>
+&nbsp;&nbsp;flex-direction: ${flexDirection.value};<br>
+&nbsp;&nbsp;justify-content: ${justifyContent.value};<br>
+&nbsp;&nbsp;align-items: ${alignItems.value};<br>
+&nbsp;&nbsp;flex-wrap: ${flexWrap.value};<br>
+}`;
+        }
+        
+        // Adicionando event listeners para os controles
+        flexDirection.addEventListener('change', updateFlexContainer);
+        justifyContent.addEventListener('change', updateFlexContainer);
+        alignItems.addEventListener('change', updateFlexContainer);
+        flexWrap.addEventListener('change', updateFlexContainer);
+        
+        // Inicializar a demonstração
+        updateFlexContainer();
+    </script>
+</body>
+</html>

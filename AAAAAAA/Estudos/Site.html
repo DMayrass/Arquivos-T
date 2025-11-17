@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Formulários HTML</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #4a00e0;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            padding: 0;
+        }
+        
+        .explanation {
+            flex: 1;
+            padding: 25px;
+            background: #f9f9f9;
+            line-height: 1.6;
+        }
+        
+        .practice {
+            flex: 1;
+            padding: 25px;
+            background: #fff;
+        }
+        
+        h2 {
+            color: #4a00e0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4a00e0;
+        }
+        
+        h3 {
+            color: #6a11cb;
+            margin: 20px 0 10px;
+        }
+        
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        
+        form {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #6a11cb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        button:hover {
+            background: #4a00e0;
+        }
+        
+        .exercise {
+            background: #e6f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2575fc;
+        }
+        
+        .hint {
+            background: #fff8e1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .show-hint {
+            background: none;
+            border: none;
+            color: #2575fc;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4a00e0;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Aprendendo Formulários HTML</h1>
+            <p class="subtitle">Entenda as tags form, label, input, textarea e button</p>
+        </header>
+        
+        <div class="content">
+            <div class="explanation">
+                <h2>Explicação das Tags</h2>
+                
+                <h3>A Tag &lt;form&gt;</h3>
+                <p>O elemento &lt;form&gt; é um container para todos os elementos de um formulário. Ele define onde os dados serão enviados quando o usuário clicar em "Enviar".</p>
+                
+                <div class="code-example">
+                    &lt;form action="/enviar.php" method="POST"&gt;<br>
+                    &nbsp;&nbsp;&lt;!-- elementos do formulário aqui --&gt;<br>
+                    &lt;/form&gt;
+                </div>
+                
+                <h3>A Tag &lt;label&gt;</h3>
+                <p>O elemento &lt;label&gt; define um rótulo para um elemento &lt;input&gt;. Melhora a acessibilidade e a usabilidade - ao clicar no rótulo, o campo de entrada é focado.</p>
+                
+                <div class="code-example">
+                    &lt;label for="nome"&gt;Nome completo:&lt;/label&gt;<br>
+                    &lt;input type="text" id="nome" name="nome"&gt;
+                </div>
+                
+                <h3>A Tag &lt;input&gt;</h3>
+                <p>O elemento &lt;input&gt; é usado para criar campos de entrada de dados. O atributo "type" define que tipo de entrada será criada (text, email, password, etc.).</p>
+                
+                <div class="code-example">
+                    &lt;input type="text"&gt; &lt;!-- Campo de texto --&gt;<br>
+                    &lt;input type="email"&gt; &lt;!-- Campo de email --&gt;<br>
+                    &lt;input type="password"&gt; &lt;!-- Campo de senha --&gt;<br>
+                    &lt;input type="checkbox"&gt; &lt;!-- Caixa de seleção --&gt;
+                </div>
+                
+                <h3>A Tag &lt;textarea&gt;</h3>
+                <p>O elemento &lt;textarea&gt; define um campo para múltiplas linhas de texto, útil para comentários ou mensagens longas.</p>
+                
+                <div class="code-example">
+                    &lt;textarea id="mensagem" name="mensagem" rows="4" cols="50"&gt;<br>
+                    Texto padrão pode ser colocado aqui.<br>
+                    &lt;/textarea&gt;
+                </div>
+                
+                <h3>A Tag &lt;button&gt;</h3>
+                <p>O elemento &lt;button&gt; cria um botão clicável. Dentro de um formulário, o tipo padrão é "submit" (enviar).</p>
+                
+                <div class="code-example">
+                    &lt;button type="submit"&gt;Enviar Formulário&lt;/button&gt;<br>
+                    &lt;button type="reset"&gt;Limpar Campos&lt;/button&gt;<br>
+                    &lt;button type="button"&gt;Botão Comum&lt;/button&gt;
+                </div>
+            </div>
+            
+            <div class="practice">
+                <h2>Pratique Aqui</h2>
+                
+                <form id="practice-form">
+                    <div class="form-group">
+                        <label for="name">Nome completo:</label>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" placeholder="Crie uma senha">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" placeholder="Digite sua mensagem aqui..."></textarea>
+                    </div>
+                    
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+                
+                <div class="exercise">
+                    <h3>Exercício Prático</h3>
+                    <p>Crie um formulário de cadastro com os seguintes campos:</p>
+                    <ul>
+                        <li>Nome (texto)</li>
+                        <li>E-mail (email)</li>
+                        <li>Data de nascimento (data)</li>
+                        <li>Gênero (seleção única)</li>
+                        <li>Interesses (seleção múltipla)</li>
+                        <li>Senha (password)</li>
+                        <li>Botão de enviar</li>
+                    </ul>
+                    
+                    <button class="show-hint">Mostrar Dica</button>
+                    <div class="hint">
+                        <p>Dica: Use &lt;input type="radio"&gt; para seleção única e &lt;input type="checkbox"&gt; para seleção múltipla. Para agrupar opções, use &lt;fieldset&gt; e &lt;legend&gt;.</p>
+                        <div class="code-example">
+                            &lt;fieldset&gt;<br>
+                            &nbsp;&nbsp;&lt;legend&gt;Gênero&lt;/legend&gt;<br>
+                            &nbsp;&nbsp;&lt;input type="radio" id="masculino" name="genero" value="masculino"&gt;<br>
+                            &nbsp;&nbsp;&lt;label for="masculino"&gt;Masculino&lt;/label&gt;&lt;br&gt;<br>
+                            &nbsp;&nbsp;&lt;input type="radio" id="feminino" name="genero" value="feminino"&gt;<br>
+                            &nbsp;&nbsp;&lt;label for="feminino"&gt;Feminino&lt;/label&gt;<br>
+                            &lt;/fieldset&gt;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h3>Desafio Avançado</h3>
+                    <p>Crie um formulário de pesquisa com:</p>
+                    <ul>
+                        <li>Campo para nome</li>
+                        <li>Seleção de faixa etária (dropdown)</li>
+                        <li>Avaliação de 1 a 5 (radio buttons)</li>
+                        <li>Sugestões (textarea)</li>
+                        <li>Checkbox para receber novidades</li>
+                        <li>Botões de enviar e limpar formulário</li>
+                    </ul>
+                    
+                    <button class="show-hint">Mostrar Dica</button>
+                    <div class="hint">
+                        <p>Dica: Use &lt;select&gt; com &lt;option&gt; para o dropdown de faixa etária. Para botão de limpar, use &lt;button type="reset"&gt;.</p>
+                        <div class="code-example">
+                            &lt;label for="idade"&gt;Faixa etária:&lt;/label&gt;<br>
+                            &lt;select id="idade" name="idade"&gt;<br>
+                            &nbsp;&nbsp;&lt;option value="18-25"&gt;18-25 anos&lt;/option&gt;<br>
+                            &nbsp;&nbsp;&lt;option value="26-35"&gt;26-35 anos&lt;/option&gt;<br>
+                            &nbsp;&nbsp;&lt;option value="36-45"&gt;36-45 anos&lt;/option&gt;<br>
+                            &nbsp;&nbsp;&lt;option value="46+"&gt;46+ anos&lt;/option&gt;<br>
+                            &lt;/select&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Exercícios de HTML - Aprendendo Formulários | Prática de Desenvolvimento Web</p>
+        </footer>
+    </div>
+
+    <script>
+        // Script para mostrar as dicas
+        document.querySelectorAll('.show-hint').forEach(button => {
+            button.addEventListener('click', function() {
+                const hint = this.nextElementSibling;
+                if (hint.style.display === 'block') {
+                    hint.style.display = 'none';
+                    this.textContent = 'Mostrar Dica';
+                } else {
+                    hint.style.display = 'block';
+                    this.textContent = 'Ocultar Dica';
+                }
+            });
+        });
+        
+        // Prevenir envio do formulário de exemplo
+        document.getElementById('practice-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulário enviado com sucesso! (esta é apenas uma demonstração)');
+        });
+    </script>
+</body>
+</html>

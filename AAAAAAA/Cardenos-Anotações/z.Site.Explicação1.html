@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display: Inline-Block - Explicação Visual</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2f3542;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .explanation {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #2575fc;
+            margin: 30px 0 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .comparison-box {
+            flex: 1;
+            min-width: 300px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .demo-area {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #2575fc;
+            min-height: 200px;
+        }
+        
+        .element {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .inline .element {
+            display: inline;
+            padding: 15px;
+        }
+        
+        .block .element {
+            display: block;
+            margin: 15px;
+        }
+        
+        .inline-block .element {
+            display: inline-block;
+            width: 120px;
+            height: 80px;
+        }
+        
+        .interactive-demo {
+            background: #f1f2f6;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .control-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2f3542;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus, input:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+        
+        .demo-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            min-height: 200px;
+            border: 2px dashed #a4b0be;
+        }
+        
+        .demo-element {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            color: #2f3542;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .highlight {
+            background: #fffacd;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #2f3542;
+        }
+        
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .use-case {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            color: #747d8c;
+            font-size: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Display: Inline-Block</h1>
+            <p class="subtitle">Compreenda a propriedade CSS que combina características de elementos inline e block</p>
+        </header>
+        
+        <div class="content">
+            <div class="explanation">
+                <h2>O que é display: inline-block?</h2>
+                <p>O <span class="highlight">display: inline-block;</span> é um valor da propriedade CSS display que combina características dos elementos inline e block.</p>
+                
+                <div class="code-example">
+                    .elemento {<br>
+                    &nbsp;&nbsp;display: inline-block;<br>
+                    }
+                </div>
+                
+                <h2>Como funciona?</h2>
+                <p>Elementos com <span class="highlight">display: inline-block;</span> possuem as seguintes características:</p>
+                
+                <div class="comparison">
+                    <div class="comparison-box inline">
+                        <h3>Elementos Inline</h3>
+                        <ul>
+                            <li>Ficam na mesma linha</li>
+                            <li>Não aceitam width e height</li>
+                            <li>Aceitam apenas padding e margin horizontais</li>
+                        </ul>
+                        <div class="demo-area">
+                            <div class="element">Elemento 1</div>
+                            <div class="element">Elemento 2</div>
+                            <div class="element">Elemento 3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-box block">
+                        <h3>Elementos Block</h3>
+                        <ul>
+                            <li>Ocupam toda a largura disponível</li>
+                            <li>Ficam em linhas separadas</li>
+                            <li>Aceitam width, height, padding e margin</li>
+                        </ul>
+                        <div class="demo-area">
+                            <div class="element">Elemento 1</div>
+                            <div class="element">Elemento 2</div>
+                            <div class="element">Elemento 3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-box inline-block">
+                        <h3>Elementos Inline-Block</h3>
+                        <ul>
+                            <li>Ficam na mesma linha</li>
+                            <li>Aceitam width e height</li>
+                            <li>Aceitam padding e margin em todas as direções</li>
+                        </ul>
+                        <div class="demo-area">
+                            <div class="element">Elemento 1</div>
+                            <div class="element">Elemento 2</div>
+                            <div class="element">Elemento 3</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Quando usar inline-block?</h2>
+                <p>Use <span class="highlight">display: inline-block;</span> quando precisar de elementos que permaneçam na mesma linha, mas que também precisam ter dimensões definidas (largura e altura).</p>
+                
+                <div class="use-cases">
+                    <div class="use-case">
+                        <h3>Listas horizontais</h3>
+                        <p>Para criar menus de navegação horizontal onde cada item precisa ter tamanho específico.</p>
+                    </div>
+                    
+                    <div class="use-case">
+                        <h3>Grades de produtos</h3>
+                        <p>Para exibir produtos ou elementos em grade que precisam ficar na mesma linha.</p>
+                    </div>
+                    
+                    <div class="use-case">
+                        <h3>Elementos lado a lado</h3>
+                        <p>Para colocar elementos lado a lado com controle sobre suas dimensões.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-demo">
+                <h2>Demonstração Interativa</h2>
+                <p>Altere as propriedades abaixo para ver como o elemento inline-block se comporta:</p>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="width">Largura (width)</label>
+                        <input type="range" id="width" min="80" max="300" value="150">
+                        <span id="width-value">150px</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="height">Altura (height)</label>
+                        <input type="range" id="height" min="40" max="200" value="80">
+                        <span id="height-value">80px</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="margin">Margem (margin)</label>
+                        <input type="range" id="margin" min="0" max="30" value="10">
+                        <span id="margin-value">10px</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="padding">Preenchimento (padding)</label>
+                        <input type="range" id="padding" min="0" max="30" value="20">
+                        <span id="padding-value">20px</span>
+                    </div>
+                </div>
+                
+                <div class="demo-container">
+                    <div class="demo-element" id="demoElement">Elemento Inline-Block</div>
+                    <div class="demo-element" id="demoElement2">Elemento 2</div>
+                    <div class="demo-element" id="demoElement3">Elemento 3</div>
+                </div>
+            </div>
+            
+            <div class="code-example">
+                <h3>CSS Aplicado ao Elemento:</h3>
+                <pre id="cssCode">.elemento {
+  display: inline-block;
+  width: 150px;
+  height: 80px;
+  margin: 10px;
+  padding: 20px;
+}</pre>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Display: Inline-Block - Exemplo Interativo | CSS para Layouts Modernos</p>
+        </footer>
+    </div>
+
+    <script>
+        // Obtendo elementos do DOM
+        const demoElement = document.getElementById('demoElement');
+        const demoElement2 = document.getElementById('demoElement2');
+        const demoElement3 = document.getElementById('demoElement3');
+        const widthSlider = document.getElementById('width');
+        const heightSlider = document.getElementById('height');
+        const marginSlider = document.getElementById('margin');
+        const paddingSlider = document.getElementById('padding');
+        const widthValue = document.getElementById('width-value');
+        const heightValue = document.getElementById('height-value');
+        const marginValue = document.getElementById('margin-value');
+        const paddingValue = document.getElementById('padding-value');
+        const cssCode = document.getElementById('cssCode');
+        
+        // Aplicando display: inline-block aos elementos de demonstração
+        demoElement.style.display = 'inline-block';
+        demoElement2.style.display = 'inline-block';
+        demoElement3.style.display = 'inline-block';
+        
+        // Função para atualizar o elemento de demonstração
+        function updateDemoElement() {
+            const width = widthSlider.value;
+            const height = heightSlider.value;
+            const margin = marginSlider.value;
+            const padding = paddingSlider.value;
+            
+            // Aplicar valores aos elementos
+            demoElement.style.width = `${width}px`;
+            demoElement.style.height = `${height}px`;
+            demoElement.style.margin = `${margin}px`;
+            demoElement.style.padding = `${padding}px`;
+            
+            demoElement2.style.width = `${width}px`;
+            demoElement2.style.height = `${height}px`;
+            demoElement2.style.margin = `${margin}px`;
+            demoElement2.style.padding = `${padding}px`;
+            
+            demoElement3.style.width = `${width}px`;
+            demoElement3.style.height = `${height}px`;
+            demoElement3.style.margin = `${margin}px`;
+            demoElement3.style.padding = `${padding}px`;
+            
+            // Atualizar os valores exibidos
+            widthValue.textContent = `${width}px`;
+            heightValue.textContent = `${height}px`;
+            marginValue.textContent = `${margin}px`;
+            paddingValue.textContent = `${padding}px`;
+            
+            // Atualizar o código CSS exibido
+            cssCode.textContent = `.elemento {
+  display: inline-block;
+  width: ${width}px;
+  height: ${height}px;
+  margin: ${margin}px;
+  padding: ${padding}px;
+}`;
+        }
+        
+        // Adicionando event listeners para os controles
+        widthSlider.addEventListener('input', updateDemoElement);
+        heightSlider.addEventListener('input', updateDemoElement);
+        marginSlider.addEventListener('input', updateDemoElement);
+        paddingSlider.addEventListener('input', updateDemoElement);
+        
+        // Inicializar a demonstração
+        updateDemoElement();
+    </script>
+</body>
+</html>

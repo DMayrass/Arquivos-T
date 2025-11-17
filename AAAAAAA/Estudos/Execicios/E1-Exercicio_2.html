@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechendo com buttons</title>
+</head>
+
+
+<body>
+  <h2 id="Titulo">Nomes dos Individos:</h2>
+  <p id="Paragrafo_1"> Anna Beatriz </p>
+
+  <button type="Botão" onclick="document.getElementById('Paragrafo_1').innerHTML='Luciana'">Mudar o nome</button>
+  <button type="Botão" onclick="document.getElementById('Paragrafo_1').style.fontSize='20px'">Aumentar a letra</button>
+</body>
+
+
+
+<body>
+<h2> Chamada </h2>
+<p id="mostraLista"></p>
+
+<script>
+  var Lista = ['Ana Beatriz', 'Luciana', 'Maria'];
+
+  // Mostra a lista ao carregar a página
+  document.getElementById('mostraLista').innerHTML = Lista.join(' - ');
+
+  function Remover() {
+    Lista.splice(0, 1); // remove o primeiro item
+    document.getElementById('mostraLista').innerHTML = Lista.join(' - '); // atualiza a lista na tela
+  }
+</script>
+
+    <button onclick='Remover()'> Retirar um nome da Lista </button>
+</body>
+
+
+
+
+
+<h2>Qual o resultado dessa equação:</h2>
+
+<p> 2 x 6 + 7 / 9 </p>
+
+<p id="demo" style="display:none">Resultado: 12,78</p>
+
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Resposta</button>
+
+<!--Puxando script de outros arquivos-->
+<script src="E1-Exercicio_1.html"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!-- Link em formato de botão-->
+<a href="https://www.w3schools.com/html/html_examples.asp" class="botao">Ir para o site</a>
+
+<style>
+  .botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .botao:hover {
+    background-color: #2980b9;
+  }
+</style>
+
+
+<!-- Botão com link-->
+<form>
+  <button type="button" onclick="location.href='https://www.w3schools.com/html/html_examples.asp'">
+    Ir para o site
+  </button>
+</form>
+
+
+
+
+
+<!--Tag meta-->
+
+    <!--Autor da página-->
+    <meta name="author" 
+        content="Nome do Autor">
+
+
+    <!--Aparece nos resultados de busca do Google e outros motores de pesquisa-->
+    <meta name="description" 
+        content="Uma descrição breve e relevante da sua página">
+
+
+    <!-- Configura a página para se adaptar a diferentes tamanhos de tela (importante para mobile)-->
+    <meta name="viewport"  
+        content="width=device-width , initial-scale=1.0"><!--
+        Viewport) controla o layout em dispositivos móveis
+        Width...) faz a largura da página igual à largura do dispositivo
+        Initial..) define o nível de zoom inicial como 100%
+    -->
+
+
+    <!--Redirecionamento - Redireciona para outra página após 5 segundos-->
+    <meta http-equiv="refresh" 
+        content="5;url=https://exemplo.com"><!--
+        Refresh) Recarrega a página ou redireciona
+        5;url..) Aposto 5 segudos recarega essa pagina
+    -->
+
+
+    
+<!--Pode ter vários atributos como: name, content, charset, http-equiv
+  Esses metadados são essenciais para:
+        Melhorar o SEO (otimização para motores de busca)
+        Garantir a renderização correta em diferentes dispositivos
+        Fornecer informações úteis sobre a página 
+-->
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Sorteio Animado</title>
+<link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+
+<!-- TELA DE SORTEIO -->
+<div class="A0" id="B1"> 
+  <h2 class="A1">Sorteio de Nomes</h2>
+  <input type="text" id="Item_Digitado" placeholder="Digite um nome">
+  <button onclick="Adicionar()">Adicionar</button>
+  <button onclick="Sortear()">Sortear</button>
+</div>
+
+<!-- TELA DE RESULTADO -->
+<div id="B2" class="A0" style="display:none;">
+  <h2 class="A1">O sorteado foi:</h2>
+  <h1 id="Nome_Sorteado" style="color: darkblue; font-size: 40px; margin: 10px 0;"></h1>
+  <button onclick="Voltar()">Novo Sorteio</button>
+</div>
+
+<!-- DIV PARA ANIMAÇÃO -->
+<div id="flores"></div>
+
+<script>
+let Itens_Selecionados2 = [];
+
+function Adicionar() {
+  let Item = document.getElementById("Item_Digitado").value.trim();
+  if(Item) {
+    Itens_Selecionados2.push(Item);
+    document.getElementById("Item_Digitado").value = "";
+  } else { alert("Digite um nome válido!"); }
+}
+
+function Sortear() {
+  if(Itens_Selecionados2.length === 0) { alert("Adicione pelo menos um nome antes de sortear!"); return; }
+
+  // MOSTRAR ANIMAÇÃO
+  const floresDiv = document.getElementById("flores");
+  floresDiv.style.display = "block";
+  criarFlores();
+
+  // Espera 3 segundos e exibe o resultado
+  setTimeout(() => {
+    let Sorteado = Itens_Selecionados2[Math.floor(Math.random() * Itens_Selecionados2.length)];
+    document.getElementById("Nome_Sorteado").textContent = Sorteado;
+
+    // Esconde tela B1, mostra B2
+    document.getElementById("B1").style.display = "none";
+    document.getElementById("B2").style.display = "grid";
+
+    // Para animação
+      floresDiv.innerHTML = "";
+      floresDiv.style.display = "none";
+    }, 3000);
+}
+
+function Voltar() {
+  document.getElementById("B2").style.display = "none";
+  document.getElementById("B1").style.display = "grid";
+  Itens_Selecionados2 = [];
+  document.getElementById("Item_Digitado").value = "";
+}
+
+// FUNÇÃO QUE CRIA FLORES
+function criarFlores() {
+  const container = document.getElementById("flores");
+  for(let i = 0; i < 30; i++) {
+    let flor = document.createElement("div");
+    flor.className = "flor";
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (3 + Math.random() * 2) + "s";
+    container.appendChild(flor);
+  }
+}
+</script>
+
+</body>
+</html>
+
