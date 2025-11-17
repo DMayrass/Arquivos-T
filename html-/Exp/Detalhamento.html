@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+   <link rel="stylesheet" href="Flores de Cerejeira/Estilo.css"> <!--Chamando css-->
+  <title>Detalhamento</title>
+</head>
+<body>
+<header">
+
+ <!-- Cadastro de nomes -->
+  <div class="A0" id="B1"> 
+    <h2 class="A1">Sorteio de Nomes</h2>
+    <input type="text" id="Item_Digitado" placeholder="Digite um nome">
+    <button onclick="Adicionar()">Adicionar</button>
+    <button onclick="Sortear()">Sortear</button>
+  </div>
+
+  <!--Resultados -->
+  <div id="B2" class="A0" style="display:none;">
+    <h2 class="A1">O sorteado foi:</h2>
+    <h1 id="Nome_Sorteado" class="A2"></h1>
+    <button onclick="Voltar()">Novo Sorteio</button>
+  </div>
+
+  <!--Animação -->
+  <div id="flores"></div>
+</header>
+
+
+<script>
+
+// Lista dos Nomes
+let Itens_Selecionados2 = []; 
+
+  //Confugurando a entrada do usuario
+function Adicionar() {
+      let Item = document.getElementById("Item_Digitado").value.trim();                                               //Atribui a variavel "Item" o valor de "Intem_digitados" / Trim reove os espaços " Maria " = "Maria"
+
+  /*Inserindo os Nomes na lista
+                          Aciona na lista            Atualiza              Reset o input                              */
+      if (Item) { Itens_Selecionados2.push(Item); document.getElementById("Item_Digitado").value = "";}               
+      else {alert("Digite um nome válido!");}
+}
+
+
+function Sortear() {
+      if (Itens_Selecionados2.length === 0) {alert("Adicione pelo menos um nome antes de sortear!"); return;}
+      
+      //Inicia animação
+      const ChuvaDeFlores = document.getElementById("flores");
+      ChuvaDeFlores.style.display = "block";
+      criarFlores();
+
+      //Cronometro
+      setTimeout(() => {
+      
+      //Fazendo o Sorteio
+      let Sorteado = Itens_Selecionados2[Math.floor(Math.random() * Itens_Selecionados2.length)];
+      document.getElementById("Nome_Sorteado").textContent = Sorteado;
+
+      //Resultado
+      document.getElementById("B1").style.display = "none";
+      document.getElementById("B2").style.display = "grid";
+
+      //Para animação
+      ChuvaDeFlores.innerHTML = "";
+      ChuvaDeFlores.style.display = "none";
+      }, 
+      4500
+      );
+}
+
+
+function Voltar() {
+      // Restaura o conteúdo original da div
+      document.getElementById("B2").style.display = "none";
+      document.getElementById("B1").style.display = "grid";
+
+      // Limpa a lista para novo sorteio
+      Itens_Selecionados2 = [];
+      document.getElementById("Item_Digitado").value = "";
+}
+
+
+//Criando as flores
+function criarFlores() {
+    //Chama onde ela vai aparcer
+    const Animação = document.getElementById("flores");
+
+    //O css escondeu ela agora ela ira aparecer
+    Animação.style.display = "block";
+
+    //Vai fazer rotar 150x gerando a quantidade de de petalas que vai aparecer
+    for (let i = 0; i < 150; i++) {
+
+
+    /*--------------------------------------------------*/ 
+    //Mesmo que escrever: 
+    //<div class="flor"> </div>
+
+
+    //Cria uma nova div. 
+    let flor = document.createElement("div");       
+
+    //Cria uma class para ela no CSS
+    flor.className = "flor";      
+    
+    /*---------------------------------------------------*/
+
+    //Criando possições aleatorias para cada flor, vai ficar a x da borda esquerda da tela
+    flor.style.left = Math.random() * 100 + "vw";
+
+    //Tempo de queda -- style.animationDuration da um tempo diferente para cada flor / Se for colocar o tempo no css elas teriam o mesmo tempo.
+    flor.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+    /*---------------------------------------------------*/
+    //Mesmo que escrever: 
+    //div class="flor"> <img src="Petalas.png"> </div>
+
+
+    //Cria um elemento ima atribuido a Imagem                  <img>
+    let Imagem = document.createElement("img");
+
+    //Localizo a Petalas                                       <img src="Petalas.png">
+    Imagem.src = "Flores de Cerejeira/Petalas.png";
+
+    //Coloca a imagem dentro da div flor                        <div> <img src="Petalas.png"> </div>
+    flor.appendChild(Imagem);
+
+    /*---------------------------------------------------*/
+    
+    //Animação = Div flores la de cima 
+    //Flor = div que criamos agora a pouco
+    //Adciona a div flor dentro da div Animação/Flores
+    Animação.appendChild(flor);
+
+    //addEventListener = elemento.addEventListener("evento", função); = "Ei, elemento flor, fique de olho e quando acontecer o evento animationend, execute a função () => flor.remove()."
+    //"animationend" é um evento que ocorre quando a animação CSS termina.
+    // A função () => flor.remove() é chamada quando a animação termina, e ela faz: 
+    flor.addEventListener("animationend", () => flor.remove());
+  }
+}
+  
+  </script>
+
+</body>
+</html>

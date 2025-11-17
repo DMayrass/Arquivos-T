@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+   <link rel="stylesheet" href="Estilo.css">
+  <title>Petalas de Cerejeira</title>
+</head>
+<body>
+<header">
+
+ <!-- Cadastro das flores -->
+  <div class="A0" id="B1"> 
+    <h2 class="A1">Sorteio de flores</h2>
+    <input type="text" id="Item_Digitado" placeholder="Digite o nome de uma flor">
+    <button onclick="Adicionar()">Adicionar</button>
+    <button onclick="Sortear()">Sortear</button>
+  </div>
+
+  <!-- Resultados -->
+  <div id="B2" class="A0" style="display:none;">
+    <h2 class="A1">A sorteada foi:</h2>
+    <h1 id="Nome_Sorteado" class="A2"></h1>
+    <button onclick="Voltar()">Novo Sorteio</button>
+  </div>
+
+  <!-- Animação -->
+  <div id="flores"></div>
+</header>
+
+
+
+<script>
+
+// Lista com as flores
+let Flores_Escolhidas = []; 
+
+//Confuguração da entrada do usuario
+function Adicionar() {
+      let Item = document.getElementById("Item_Digitado").value.trim();                                               //Atribui a variavel "Item" o valor de "Intem_digitados" / Trim reove os espaços " Maria " = "Maria"
+
+      //Inserindo as flores na lista
+      if (Item) { Flores_Escolhidas.push(Item); document.getElementById("Item_Digitado").value = "";}               
+      else {alert("Digite um nome válido!");}
+}
+
+//Configuraçaõ do sorteio
+function Sortear() {
+      if (Flores_Escolhidas.length === 0) {alert("Adicione pelo menos um nome antes de sortear!"); return;}
+      
+      //Iniciando a animação
+      const ChuvaDeFlores = document.getElementById("flores");
+      ChuvaDeFlores.style.display = "block";
+      Criação_Das_Flores();
+
+      //Cronometro 
+      setTimeout(() => {
+      
+        //Fazendo o Sorteio
+        let Sorteado = Flores_Escolhidas[Math.floor(Math.random() * Flores_Escolhidas.length)];
+        document.getElementById("Nome_Sorteado").textContent = Sorteado;
+
+        //Resultado
+        document.getElementById("B1").style.display = "none";
+        document.getElementById("B2").style.display = "grid";
+
+        //Para animação
+        ChuvaDeFlores.innerHTML = "";
+        ChuvaDeFlores.style.display = "none";
+      }, 
+
+      //Tempo de espera para abrir o resultado  
+      4500
+      );
+}
+
+//Configuração da volta
+function Voltar() {
+      // Restaura o conteúdo original
+      document.getElementById("B2").style.display = "none";
+      document.getElementById("B1").style.display = "grid";
+
+      // Limpa a lista para um novo sorteio
+      Flores_Escolhidas = [];
+      document.getElementById("Item_Digitado").value = "";
+}
+
+
+//Configurão da animação
+function Criação_Das_Flores() {
+
+    // Visualização Liberada
+    const Animação = document.getElementById("flores");
+    Animação.style.display = "block";
+
+    // Formatação das flores
+    for (let i = 0; i < 100; i++) {                                   
+    let flor = document.createElement("div");                         
+    flor.className = "flor";
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+    // Imagem da flor
+    let img = document.createElement("img");
+    img.src = "Petalas.png";
+    flor.appendChild(img);
+
+    //
+    Animação.appendChild(flor);
+    flor.addEventListener("animationend", () => flor.remove());
+  }
+}
+  
+  </script>
+
+</body>
+</html>
+
